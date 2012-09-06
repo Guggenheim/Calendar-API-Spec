@@ -24,7 +24,7 @@ interpreted as described in [RFC 2119][].
             <td>List of Events on the current day</td>
         </tr>
         <tr>
-            <td>calendar/events/{YYYY-MM-DD}/</td>
+            <td>calendar/events/{YYYY-MM-DD}</td>
             <td>List of Events on the specified day</td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@ interpreted as described in [RFC 2119][].
             <td>List of Instances on the current day</td>
         </tr>
         <tr>
-            <td>calendar/instances/{YYYY-MM-DD}/</td>
+            <td>calendar/instances/{YYYY-MM-DD}</td>
             <td>List of Instances on the specified day</td>
         </tr>
         <tr>
@@ -79,7 +79,7 @@ When users are looking at calendar data for a specific timeframe, they should be
             <td>One Instance</td>
         </tr>
         <tr>
-            <td>calendar/instances/{YYYY-MM-DD}/</td>
+            <td>calendar/instances/{YYYY-MM-DD}</td>
             <td>List of Instances on the specified day</td>
         </tr>
     </tbody>
@@ -120,11 +120,10 @@ current date.
                         <th>month</th>
                         <td>Return instances for the month in which the day 
                             occurs. For instance, if the specified date were
-                            ```2012-02-01```, with ```days=month``` the 
-                            response would include instances from Feb. 1 to 
-                            Feb. 29 (inclusive). With ```days=30``` the 
-                            response would include instance from Feb. 1 to 
-                            March 1.</td>
+                            <code>2012-02-01</code>, with 
+                            <code>days=month</code> the response would include instances from Feb. 1 to  Feb. 29 (inclusive). With 
+                            <code>days=30<code> the  response would include 
+                            instance from Feb. 1 to March 1.</td>
                     </tr>
                 </table>
              </td>

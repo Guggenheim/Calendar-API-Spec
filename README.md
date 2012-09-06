@@ -122,7 +122,7 @@ current date.
                             occurs. For instance, if the specified date were
                             <code>2012-02-01</code>, with 
                             <code>days=month</code> the response would include instances from Feb. 1 to  Feb. 29 (inclusive). With 
-                            <code>days=30<code> the  response would include 
+                            <code>days=30</code> the  response would include 
                             instance from Feb. 1 to March 1.</td>
                     </tr>
                 </table>

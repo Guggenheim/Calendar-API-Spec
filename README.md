@@ -131,7 +131,7 @@ current date.
     </tbody>
 </table>
 
-### calendar/{id}
+### calendar/instances/{id}
 
 Returns a single instance with the corresponding id.
 

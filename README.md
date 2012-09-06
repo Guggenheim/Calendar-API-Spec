@@ -24,24 +24,24 @@ interpreted as described in [RFC 2119][].
             <td>List of Events on the current day</td>
         </tr>
         <tr>
-            <td>calendar/events/{id}</td>
-            <td>One Event</td>
+            <td>calendar/events/{YYYY-MM-DD}/</td>
+            <td>List of Events on the specified day</td>
         </tr>
         <tr>
-            <td>calendar/events/{YYYY}/{MM}/{DD}/</td>
-            <td>List of Events on the specified day</td>
+            <td>calendar/events/{id}</td>
+            <td>One Event</td>
         </tr>
         <tr>
             <td>calendar/instances</td>
             <td>List of Instances on the current day</td>
         </tr>
         <tr>
-            <td>calendar/instances/{id}</td>
-            <td>One Instance</td>
+            <td>calendar/instances/{YYYY-MM-DD}/</td>
+            <td>List of Instances on the specified day</td>
         </tr>
         <tr>
-            <td>calendar/instances/{YYYY}/{MM}/{DD}/</td>
-            <td>List of Instances on the specified day</td>
+            <td>calendar/instances/{id}</td>
+            <td>One Instance</td>
         </tr>
         <tr>
             <td>calendar/categories</td>
@@ -61,6 +61,80 @@ One "event" may be repeated at different times, such as the showings of a film, 
 When users are looking at calendar data for a specific timeframe, they should be be shown Instances rather than Events (since Instances of the Event outside the timeframe wouldn't be of any immediate interest). When users are viewing calendar data thematically (say, by Category) they should be shown Events first.
 
 ## Instances
+
+### Endpoints
+
+<table>
+    <thead>
+        <th>Endpoint</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/calendar/instances</td>
+            <td>List of Instances on the current day</td>
+        </tr>
+        <tr>
+            <td>calendar/instances/{id}</td>
+            <td>One Instance</td>
+        </tr>
+        <tr>
+            <td>calendar/instances/{YYYY-MM-DD}/</td>
+            <td>List of Instances on the specified day</td>
+        </tr>
+    </tbody>
+</table>
+
+### calendar/instances, calendar/instances/{YYYY-MM-DD}
+
+These endpoints return a list of instances for the given day (must be a valid 
+date in YYYY-MM-DD format) or the current day if no date is specified. The 
+simplest form ```calendar/instances``` is the equivalent of 
+```/calendar/instances/{YYYY-MM-DD}?days=1``` where ```YYYY-MM-DD``` is the 
+current date.
+
+<table>
+    <thead>
+        <th>Parameter</th>
+        <th>Req'd?</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>days</td>
+            <td>optional</td>
+            <td>Number of days' worth or instances to retrieve (default 1, 
+                maximum 31) inclusive of the start date. This parameter can
+                also take one of two special values:
+
+                <table>
+                    <tr>
+                        <th>week</th>
+                        <td>Return instances for the week (Sun-Sat) in which
+                            the day occurs. For instance, if the specified 
+                            date where a Thursday, the response would 
+                            include instances from the previous Sunday to the 
+                            following Saturday (inclusive).</td>
+                    </tr>
+                    <tr>
+                        <th>month</th>
+                        <td>Return instances for the month in which the day 
+                            occurs. For instance, if the specified date were
+                            ```2012-02-01```, with ```days=month``` the 
+                            response would include instances from Feb. 1 to 
+                            Feb. 29 (inclusive). With ```days=30``` the 
+                            response would include instance from Feb. 1 to 
+                            March 1.</td>
+                    </tr>
+                </table>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+### calendar/{id}
+
+Returns a single instance with the corresponding id.
 
 ### Example Instance
 

@@ -20,14 +20,6 @@ interpreted as described in [RFC 2119][].
             <td>Index of available resources</td>
         </tr>
         <tr>
-            <td>calendar/events</td>
-            <td>List of Events on the current day</td>
-        </tr>
-        <tr>
-            <td>calendar/events/{YYYY-MM-DD}</td>
-            <td>List of Events on the specified day</td>
-        </tr>
-        <tr>
             <td>calendar/events/{id}</td>
             <td>One Event</td>
         </tr>
@@ -38,6 +30,10 @@ interpreted as described in [RFC 2119][].
         <tr>
             <td>calendar/instances/{YYYY-MM-DD}</td>
             <td>List of Instances on the specified day</td>
+        </tr>
+        <tr>
+            <td>calendar/instances/{YYYY-MM}</td>
+            <td>List of Instances in the specified month</td>
         </tr>
         <tr>
             <td>calendar/instances/{id}</td>
@@ -58,16 +54,16 @@ interpreted as described in [RFC 2119][].
 
 One "event" may be repeated at different times, such as the showings of a film, so an Event resource consists of a title, description, category, etc. and a list of Instances. Every event must be associated with at least one instance. When an Instance resource is retrieved by itself, it will include all the descriptive fields of and a link to its parent Event.
 
-When users are looking at calendar data for a specific timeframe, they should be be shown Instances rather than Events (since Instances of the Event outside the timeframe wouldn't be of any immediate interest). When users are viewing calendar data thematically (say, by Category) they should be shown Events first.
-
 ## Instances
 
 ### Endpoints
 
 <table>
     <thead>
-        <th>Endpoint</th>
-        <th>Description</th>
+        <tr>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
     </thead>
     <tbody>
         <tr>
@@ -85,13 +81,14 @@ When users are looking at calendar data for a specific timeframe, they should be
     </tbody>
 </table>
 
-### calendar/instances, calendar/instances/{YYYY-MM-DD}
+### calendar/instances, calendar/instances/{YYYY-MM-DD}, , calendar/instances/{YYYY-MM}
 
 These endpoints return a list of instances for the given day (must be a valid 
 date in YYYY-MM-DD format) or the current day if no date is specified. The 
 simplest form ```calendar/instances``` is the equivalent of 
 ```/calendar/instances/{YYYY-MM-DD}?days=1``` where ```YYYY-MM-DD``` is the 
-current date.
+current date. ```calendar/instances/{YYYY-MM}``` returns a list of instances 
+for the calendar month specified (that is, from the first to the last day)
 
 <table>
     <thead>
@@ -131,42 +128,114 @@ current date.
     </tbody>
 </table>
 
+### Example Response
+
+    {
+        "start_date": "2012-09-21",
+        "end_date": "2012-09-21",
+        "instances": [
+            {...}, 
+            {...}
+        ]
+        "_links": {
+            "_self": {
+                "href": "http://dev0.guggenheim.org/calendar/instances/"
+            }, 
+            "day": {
+                "href": "http://dev0.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
+            }
+            "month": {
+                "href": "http://dev0.guggenheim.org/calendar/instances/{YYYY-MM}"
+            }
+            "item": {
+                "href": "http://dev0.guggenheim.org/calendar/instances/{id}"
+            }
+        }, 
+    }
+
+### Response Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>start_date</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>Start date of the requested date range. Note: this MAY not be
+                the date of the first instance returned.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>End date of the requested date range. Note: this MAY not be
+                the date of the last instance returned.</td>
+        </tr>
+        <tr>
+            <td>instances</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of instance resources (see below).</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object. An Instances MUST contain a links to itself,
+                (<code>_self</code>) to its parent Event (<code>event</code>), 
+                and to its equivalent URL on the guggenheim.org website.
+                (<code>web</code>)</td>
+        </tr>
+
+    </tbody>
+</table>
+
 ### calendar/instances/{id}
 
 Returns a single instance with the corresponding id.
 
-### Example Instance
+### Example Response/Instance
 
     {
-        "id": 13106,
-        "titles": {
+        "id": "13106", 
+        "title": {
             "en": "Rineke Dijkstra Selects"
-        },
-        "descriptions": {
-            "en": "<em>Blind Kind</em>, 1964. Courtesy EYE Film Instituut Nederland <strong><em>Blind Kind</em>, 1964</strong><br /> Dir. Johan van der Keuken, 25 minutes, 35 mm<br /> Courtesy Mrs. N van der Lely and EYE Film Instituut Nederland <strong><em>Blanche-Neige Lucie</em>, 1997</strong><br /> Pierre Huyghe, 4 minutes, DVD<br /> Courtesy Marian Goodman Gallery and Pierre Huyghe <strong><em>Fiorucci Made Me Hardcore</em>, 1999</strong><br /> Mark Leckey, 15 minutes, DVD On the occasion of <em>Rineke Dijkstra: A Retrospective</em>, the Guggenheim presents a short program of film and video works carefully assembled by the artist. The program includes <em>Fiorucci Made Me Hardcore</em>, Mark Leckey's acclaimed short film portraying British nightlife from fragments of found video footage; Pierre Huyghe's <em>Blanche-Neige Lucie</em>, his short film capturing the struggle of Lucie Dolene, who sued Disney to regain possession of the copyright to her own voice in the French dubbed version of <em>Snow White and the Seven Dwarfs</em>; as well as <em>Blind Kind</em>, Johan van der Keuken's poetic short documentary about a school for blind children in Amsterdam, which captures firsthand the children's insight into their perception of the world around them."
-        }, 
+        }
         "start_date": "2012-08-31", 
         "start_time": "13:00:00", 
-        "end_date": "2012-08-31", 
-        "end_time": "14:00:00", 
-        "category": {
-            "id": "22", 
-            "title": "Film",
-            "_links": {
-                "_self": "http://api.guggenheim.org/calendar/categories/22"
-            } 
-        }
+        "categories": [
+            {
+                "id": "22", 
+                "title": "Film",
+                "_links": {
+                    "_self": {
+                        "href": "http://dev0.guggenheim.org/calendar/categories/22"
+                    }
+                }
+            }
+        ], 
+        "descriptions": {
+            "en": "<strong><em>Blind Kind</em>, 1964</strong> Dir. Johan van der Keuken, 25 minutes, 35 mm Courtesy Mrs. N van der Lely and EYE Film Instituut Nederland <strong><em>Blanche-Neige Lucie</em>, 1997</strong> Pierre Huyghe, 4 minutes, DVD Courtesy Marian Goodman Gallery and Pierre Huyghe <strong><em>Fiorucci Made Me Hardcore</em>, 1999</strong> Mark Leckey, 15 minutes, DVD On the occasion of <em>Rineke Dijkstra: A Retrospective</em>, the Guggenheim presents a short program of film and video works carefully assembled by the artist. The program includes <em>Fiorucci Made Me Hardcore</em>, Mark Leckey's acclaimed short film portraying British nightlife from fragments of found video footage; Pierre Huyghe's <em>Blanche-Neige Lucie</em>, his short film capturing the struggle of Lucie Dolene, who sued Disney to regain possession of the copyright to her own voice in the French dubbed version of <em>Snow White and the Seven Dwarfs</em>; as well as <em>Blind Kind</em>, Johan van der Keuken's poetic short documentary about a school for blind children in Amsterdam, which captures firsthand the children's insight into their perception of the world around them."
+        }, 
         "_links": {
             "_self": {
-                "href": "http://api.guggenheim.org/calendar/instances/13106"
+                "href": "http://dev0.guggenheim.org/calendar/instances/13106"
             }, 
             "event": {
-                "href": "http://api.guggenheim.org/calendar/events/778"
-            },
+                "href": "http://dev0.guggenheim.org/calendar/events/778"
+            }, 
             "web": {
                 "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/08/31/rineke-dijkstra-selects/i/13106"
             }
-        }, 
+        } 
     }
 
 ### Instance fields
@@ -218,29 +287,34 @@ Returns a single instance with the corresponding id.
         <tr>
             <td>end_date</td>
             <td>string</td>
-            <td>REQUIRED</td>
-            <td>End date of the instance in YYYY-MM-DD format</td>
+            <td>OPTIONAL</td>
+            <td>End date of the instance in YYYY-MM-DD format. Currently no 
+                instances have an end_date, but we may at any time add them to
+                the API. After that this property will be REQUIRED.</td>
         </tr>
         <tr>
             <td>end_time</td>
             <td>string</td>
-            <td>REQUIRED</td>
+            <td>OPTIONAL</td>
             <td>End time of the instance in HH:MM format using a 24-hour
-                clock.</td>
+                clock. Currently no instances have an end_time, but we may at 
+                any time add them to the API. After that this property will be 
+                REQUIRED.</td>
         </tr>
         <tr>
-            <td>category</td>
-            <td>object</td>
+            <td>categories</td>
+            <td>array</td>
             <td>REQUIRED</td>
-            <td>A Category object</td>
+            <td>An array of category object</td>
         </tr>
         <tr>
             <td>_links</td>
             <td>object</td>
             <td>REQUIRED</td>
-            <td>A Links object. An Instances MUST contain a links to itself,
-            to its parent Event, and to its equivalent URL on the 
-            guggenheim.org website.</td>
+            <td>A Links object. An Instance MUST contain a links to itself,
+                (<code>_self</code>) to its parent Event (<code>event</code>), 
+                and to its equivalent URL on the guggenheim.org website.
+                (<code>web</code>)</td>
         </tr>
     </tbody>
 </table>

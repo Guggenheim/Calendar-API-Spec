@@ -319,52 +319,37 @@ Response:
         ]
     }
 
-### calendar/instances/{YYYY-MM-DD}, , calendar/instances/{YYYY-MM}
+### instances/{YYYY-MM-DD}
 
-These endpoints return a list of instances for the given day (must be a valid 
-date in YYYY-MM-DD format) or the current day if no date is specified. The 
-simplest form ```calendar/instances``` is the equivalent of 
-```/calendar/instances/{YYYY-MM-DD}?days=1``` where ```YYYY-MM-DD``` is the 
-current date. ```calendar/instances/{YYYY-MM}``` returns a list of instances 
-for the calendar month specified (that is, from the first to the last day)
+Retrieve a list of instances for the given date or date range. The range can be specified with the ```days``` parameter which can take the follwing values
 
 <table>
     <thead>
-        <th>Parameter</th>
-        <th>Req'd?</th>
-        <th>Description</th>
+        <th>Value</th>
+        <th>Example</th>
+        <th>Result</th>
     </thead>
     <tbody>
         <tr>
-            <td>days</td>
-            <td>optional</td>
-            <td>Number of days' worth or instances to retrieve (default 1, 
-                maximum 31) inclusive of the start date. This parameter can
-                also take one of two special values:
-
-                <table>
-                    <tr>
-                        <th>week</th>
-                        <td>Return instances for the week (Sun-Sat) in which
-                            the day occurs. For instance, if the specified 
-                            date where a Thursday, the response would 
-                            include instances from the previous Sunday to the 
-                            following Saturday (inclusive).</td>
-                    </tr>
-                    <tr>
-                        <th>month</th>
-                        <td>Return instances for the month in which the day 
-                            occurs. For instance, if the specified date were
-                            <code>2012-02-01</code>, with 
-                            <code>days=month</code> the response would include instances from Feb. 1 to  Feb. 29 (inclusive). With 
-                            <code>days=30</code> the  response would include 
-                            instance from Feb. 1 to March 1.</td>
-                    </tr>
-                </table>
-             </td>
+            <td>An integer</td>
+            <td><code>instances/2012-03-15?days=7</code></td>
+            <td>The number of days following the given date, inclusive. This example would retrieve all instances from March 15, 2012 to March 21, 2012.</td>
+        </tr>
+        <tr>
+            <td>'week'</td>
+            <td><code>instances/2012-03-15?days=week</code></td>
+            <td>The week (Sunday-Saturday) containing the date. This example would retrieve all instances from March 11, 2012 to March 17, 2012. <code>instances/2012-03-14?days=week</code> would return the same result.</td>
+        </tr>
+        <tr>
+            <td>'month'</td>
+            <td><code>instances/2012-03-15?days=month</code></td>
+            <td>The calendar month containing the date. This example would retrieve all instances from March 1, 2012 to March 31, 2012</td>
         </tr>
     </tbody>
 </table>
+
+
+
 
 
 ### Response Fields
@@ -412,45 +397,6 @@ for the calendar month specified (that is, from the first to the last day)
     </tbody>
 </table>
 
-### calendar/instances/{id}
-
-Returns a single instance with the corresponding id.
-
-### Example Response/Instance
-
-    {
-        "id": "13106", 
-        "title": {
-            "en": "Rineke Dijkstra Selects"
-        }
-        "start_date": "2012-08-31", 
-        "start_time": "13:00:00", 
-        "categories": [
-            {
-                "id": "22", 
-                "title": "Film",
-                "_links": {
-                    "_self": {
-                        "href": "http://dev0.guggenheim.org/calendar/categories/22"
-                    }
-                }
-            }
-        ], 
-        "descriptions": {
-            "en": "<strong><em>Blind Kind</em>, 1964</strong> Dir. Johan van der Keuken, 25 minutes, 35 mm Courtesy Mrs. N van der Lely and EYE Film Instituut Nederland <strong><em>Blanche-Neige Lucie</em>, 1997</strong> Pierre Huyghe, 4 minutes, DVD Courtesy Marian Goodman Gallery and Pierre Huyghe <strong><em>Fiorucci Made Me Hardcore</em>, 1999</strong> Mark Leckey, 15 minutes, DVD On the occasion of <em>Rineke Dijkstra: A Retrospective</em>, the Guggenheim presents a short program of film and video works carefully assembled by the artist. The program includes <em>Fiorucci Made Me Hardcore</em>, Mark Leckey's acclaimed short film portraying British nightlife from fragments of found video footage; Pierre Huyghe's <em>Blanche-Neige Lucie</em>, his short film capturing the struggle of Lucie Dolene, who sued Disney to regain possession of the copyright to her own voice in the French dubbed version of <em>Snow White and the Seven Dwarfs</em>; as well as <em>Blind Kind</em>, Johan van der Keuken's poetic short documentary about a school for blind children in Amsterdam, which captures firsthand the children's insight into their perception of the world around them."
-        }, 
-        "_links": {
-            "_self": {
-                "href": "http://dev0.guggenheim.org/calendar/instances/13106"
-            }, 
-            "event": {
-                "href": "http://dev0.guggenheim.org/calendar/events/778"
-            }, 
-            "web": {
-                "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/08/31/rineke-dijkstra-selects/i/13106"
-            }
-        } 
-    }
 
 ### Instance fields
 

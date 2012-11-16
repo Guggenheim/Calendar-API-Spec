@@ -93,6 +93,27 @@ error.
     </tbody>
 </table>
 
+The root endpoint will simply return a list of available endpoints
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/"
+            }, 
+            "categories": {
+                "href": "http://api.guggenheim.org/calendar/categories/"
+            }, 
+            "events": {
+                "href": "http://api.guggenheim.org/calendar/events/"
+            }, 
+            "instances": {
+                "href": "http://api.guggenheim.org/calendar/instances/"
+            }
+        }
+    }
+
+Other endpoints may return similar lists of links in addition to specific resources.
+
 ## Events and Instances
 
 One "event" may be repeated at different times, such as the showings of a film, so an Event resource consists of a title, description, category, etc. and a list of Instances. Every event must be associated with at least one instance. When an Instance resource is retrieved by itself, it will include all the descriptive fields of and a link to its parent Event.

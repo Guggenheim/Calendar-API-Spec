@@ -7,6 +7,49 @@ interpreted as described in [RFC 2119][].
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 
+## Base URL
+
+All URLs references in this documentation have the base
+
+    http://api.guggenheim.org/calendar/
+
+## Making Requests
+
+All requests are made over HTTP. Authentication (by access key) is required and
+the client must explicitly accept the 
+`application/vnd.guggenheim.calendar+json` content-type.
+
+All responses are JSON.
+
+Only GET requests are accepted, any other kind of request will result in a
+405 Method Not Allowed error.
+
+### Authentication
+
+The Guggenheim Calendar API requires an access key. You key can provided 
+either via a header (`X-GUGGENHEIM-API-KEY`)or as a query parameter (`key`). 
+For example, using curl, the header method would look like:
+
+    curl -H "X-GUGGENHEIM-API-KEY: [YOUR_KEY]" http://api.guggenheim.org/calendar/
+
+using a query parameter:
+
+    curl http://api.guggenheim.org/calendar/?key=[YOUR_KEY]
+
+The two are equivalent. The header method is preferred. A missing or invalid key will result in a 401 Unauthorized error
+
+### Content Type
+
+All responses are JSON, in the `application/vnd.guggenheim.calendar+json` 
+media type. Clients must explicitly accept this media type by sending the
+appropriate `Accept` header. In curl:
+
+    curl -H "Accept: application/vnd.guggenheim.calendar+json" \
+        -H "X-GUGGENHEIM-API-KEY: [YOUR_KEY]" http://api.guggenheim.org/calendar/
+
+A missing or incorrect `Accept` header will result in a 406 Not Acceptable 
+error.
+
 ## Endpoints
 
 <table>

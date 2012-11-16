@@ -195,26 +195,101 @@ for the calendar month specified (that is, from the first to the last day)
 ### Example Response
 
     {
-        "start_date": "2012-09-21",
-        "end_date": "2012-09-21",
-        "instances": [
-            {...}, 
-            {...}
-        ]
         "_links": {
             "_self": {
-                "href": "http://dev0.guggenheim.org/calendar/instances/"
+                "href": "http://api.guggenheim.org/calendar/instances/"
             }, 
             "day": {
-                "href": "http://dev0.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
-            }
-            "month": {
-                "href": "http://dev0.guggenheim.org/calendar/instances/{YYYY-MM}"
-            }
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
+            }, 
             "item": {
-                "href": "http://dev0.guggenheim.org/calendar/instances/{id}"
+                "href": "http://api.guggenheim.org/calendar/instances/{id}"
+            }, 
+            "month": {
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM}"
             }
         }, 
+        "instances": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/13444"
+                    }, 
+                    "event": {
+                        "href": "http://api.guggenheim.org/calendar/events/815"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/conservators-eye/i/13444"
+                    }
+                }, 
+                "categories": [
+                    {
+                        "_links": {
+                            "_self": {
+                                "href": "http://api.guggenheim.org/calendar/categories/20"
+                            }
+                        }, 
+                        "id": "20", 
+                        "titles": "Tours & Gallery Programs"
+                    }
+                ], 
+                "descriptions": {
+                    "en": "Join Esther Chao, Associate Conservator, Objects, for a tour of <em>Gabriel Orozco: Asterisms</em>."
+                }, 
+                "id": "13444", 
+                "start_date": "2012-11-16", 
+                "start_time": "14:00:00", 
+                "titles": {
+                    "en": "Conservator's Eye"
+                }
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/13443"
+                    }, 
+                    "event": {
+                        "href": "http://api.guggenheim.org/calendar/events/812"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/curators-eye-picasso-black-and-white/i/13443"
+                    }
+                }, 
+                "categories": [
+                    {
+                        "_links": {
+                            "_self": {
+                                "href": "http://api.guggenheim.org/calendar/categories/20"
+                            }
+                        }, 
+                        "id": "20", 
+                        "titles": "Tours & Gallery Programs"
+                    }, 
+                    {
+                        "_links": {
+                            "_self": {
+                                "href": "http://api.guggenheim.org/calendar/categories/69"
+                            }
+                        }, 
+                        "id": "69", 
+                        "titles": "Picasso Black and White"
+                    }
+                ], 
+                "descriptions": {
+                    "en": "Join Associate Curator Karole Vail for a tour of <em>Picasso Black and White</em>. Sign-up is required from noon to 1:45 pm at the Information Desk (the tour is limited to a maximum of 20 people)."
+                }, 
+                "id": "13443", 
+                "start_date": "2012-11-16", 
+                "start_time": "14:00:00", 
+                "titles": {
+                    "en": "Curator's Eye: Picasso Black and White"
+                }
+            }
+        ], 
+        "range": {
+            "end_date": "2012-11-16", 
+            "start_date": "2012-11-16"
+        }
     }
 
 ### Response Fields

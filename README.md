@@ -145,54 +145,17 @@ One "event" may be repeated at different times, such as the showings of a film, 
     </tbody>
 </table>
 
-### calendar/instances, calendar/instances/{YYYY-MM-DD}, , calendar/instances/{YYYY-MM}
+### instances/
 
-These endpoints return a list of instances for the given day (must be a valid 
-date in YYYY-MM-DD format) or the current day if no date is specified. The 
-simplest form ```calendar/instances``` is the equivalent of 
-```/calendar/instances/{YYYY-MM-DD}?days=1``` where ```YYYY-MM-DD``` is the 
-current date. ```calendar/instances/{YYYY-MM}``` returns a list of instances 
-for the calendar month specified (that is, from the first to the last day)
+Retreive a list of instances for the current day and links to other endpoints.
 
-<table>
-    <thead>
-        <th>Parameter</th>
-        <th>Req'd?</th>
-        <th>Description</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>days</td>
-            <td>optional</td>
-            <td>Number of days' worth or instances to retrieve (default 1, 
-                maximum 31) inclusive of the start date. This parameter can
-                also take one of two special values:
+#### Example Response
 
-                <table>
-                    <tr>
-                        <th>week</th>
-                        <td>Return instances for the week (Sun-Sat) in which
-                            the day occurs. For instance, if the specified 
-                            date where a Thursday, the response would 
-                            include instances from the previous Sunday to the 
-                            following Saturday (inclusive).</td>
-                    </tr>
-                    <tr>
-                        <th>month</th>
-                        <td>Return instances for the month in which the day 
-                            occurs. For instance, if the specified date were
-                            <code>2012-02-01</code>, with 
-                            <code>days=month</code> the response would include instances from Feb. 1 to  Feb. 29 (inclusive). With 
-                            <code>days=30</code> the  response would include 
-                            instance from Feb. 1 to March 1.</td>
-                    </tr>
-                </table>
-             </td>
-        </tr>
-    </tbody>
-</table>
+Request:
 
-### Example Response
+    http://api.guggenheim.org/calendar/instances/
+
+Response:
 
     {
         "_links": {
@@ -291,6 +254,118 @@ for the calendar month specified (that is, from the first to the last day)
             "start_date": "2012-11-16"
         }
     }
+
+### instances/{id}
+
+Retrieve a single instance identified by ```id```
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/instances/13444
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/instances/13444"
+            }, 
+            "day": {
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
+            }, 
+            "item": {
+                "href": "http://api.guggenheim.org/calendar/instances/{id}"
+            }, 
+            "month": {
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM}"
+            }
+        }, 
+        "instances": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/13444"
+                    }, 
+                    "event": {
+                        "href": "http://api.guggenheim.org/calendar/events/815"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/conservators-eye/i/13444"
+                    }
+                }, 
+                "categories": [
+                    {
+                        "_links": {
+                            "_self": {
+                                "href": "http://api.guggenheim.org/calendar/categories/20"
+                            }
+                        }, 
+                        "id": "20", 
+                        "titles": "Tours & Gallery Programs"
+                    }
+                ], 
+                "descriptions": {
+                    "en": "Join Esther Chao, Associate Conservator, Objects, for a tour of <em>Gabriel Orozco: Asterisms</em>."
+                }, 
+                "id": "13444", 
+                "start_date": "2012-11-16", 
+                "start_time": "14:00:00", 
+                "titles": {
+                    "en": "Conservator's Eye"
+                }
+            }
+        ]
+    }
+
+### calendar/instances/{YYYY-MM-DD}, , calendar/instances/{YYYY-MM}
+
+These endpoints return a list of instances for the given day (must be a valid 
+date in YYYY-MM-DD format) or the current day if no date is specified. The 
+simplest form ```calendar/instances``` is the equivalent of 
+```/calendar/instances/{YYYY-MM-DD}?days=1``` where ```YYYY-MM-DD``` is the 
+current date. ```calendar/instances/{YYYY-MM}``` returns a list of instances 
+for the calendar month specified (that is, from the first to the last day)
+
+<table>
+    <thead>
+        <th>Parameter</th>
+        <th>Req'd?</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>days</td>
+            <td>optional</td>
+            <td>Number of days' worth or instances to retrieve (default 1, 
+                maximum 31) inclusive of the start date. This parameter can
+                also take one of two special values:
+
+                <table>
+                    <tr>
+                        <th>week</th>
+                        <td>Return instances for the week (Sun-Sat) in which
+                            the day occurs. For instance, if the specified 
+                            date where a Thursday, the response would 
+                            include instances from the previous Sunday to the 
+                            following Saturday (inclusive).</td>
+                    </tr>
+                    <tr>
+                        <th>month</th>
+                        <td>Return instances for the month in which the day 
+                            occurs. For instance, if the specified date were
+                            <code>2012-02-01</code>, with 
+                            <code>days=month</code> the response would include instances from Feb. 1 to  Feb. 29 (inclusive). With 
+                            <code>days=30</code> the  response would include 
+                            instance from Feb. 1 to March 1.</td>
+                    </tr>
+                </table>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
 
 ### Response Fields
 

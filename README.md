@@ -75,6 +75,10 @@ error.
             <td>List of Instances on the specified day</td>
         </tr>
         <tr>
+            <td>calendar/events/</td>
+            <td>Index of available event resources</td>
+        </tr>
+        <tr>
             <td>calendar/events/{id}</td>
             <td>One Event</td>
         </tr>
@@ -414,6 +418,106 @@ Retrieve a list of instances for the given date or date range. The range can be 
 
 Response fields are the same as ```instances/```.
 
+## Events
+
+### Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/calendar/events</td>
+            <td>Index of available event resources</td>
+        </tr>
+        <tr>
+            <td>calendar/events/{id}</td>
+            <td>One Event</td>
+        </tr>
+    </tbody>
+</table>
+
+### events/
+
+Retrieve a list links to other event resources.
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/events/
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/events/"
+            }, 
+            "item": {
+                "href": "http://api.guggenheim.org/calendar/events/{id}"
+            }
+        }
+    }
+
+### events/{id}
+
+Retrieve a single event
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/events/815
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/events/815"
+            }
+        }, 
+        "categories": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/20"
+                    }
+                }, 
+                "id": "20", 
+                "titles": "Tours & Gallery Programs"
+            }
+        ], 
+        "descriptions": {
+            "en": "Join Esther Chao, Associate Conservator, Objects, for a tour of <em>Gabriel Orozco: Asterisms</em>."
+        }, 
+        "instances": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/13444"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/conservators-eye/i/13444"
+                    }
+                }, 
+                "id": "13444", 
+                "start_date": "2012-11-16", 
+                "start_time": "14:00:00"
+            }
+        ], 
+        "titles": {
+            "en": "Conservator's Eye"
+        }
+    }
+
+See Event Object Fields
+
 ### Instance Object Fields
 
 <table>
@@ -482,6 +586,62 @@ Response fields are the same as ```instances/```.
             <td>array</td>
             <td>REQUIRED</td>
             <td>An array of category objects</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object. An Instance MUST contain a links to itself
+                (<code>_self</code>), to its parent Event 
+                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).</td>
+        </tr>
+    </tbody>
+</table>
+
+### Event Object Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>number</td>
+            <td>REQUIRED</td>
+            <td>Unique ID number for the Event</td>
+        </tr>
+        <tr>
+            <td>titles</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized titles for the event. Available titles are 
+                listed by ISO-639-1 language code.</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized descriptions for the event, also
+                listed by ISO-639-1 language code. Descriptions may contain 
+                HTML markup and should be handled accordingly.</td>
+        </tr>
+        <tr>
+            <td>categories</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of category objects</td>
+        </tr>
+        <tr>
+            <td>instances</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of instance objects</td>
         </tr>
         <tr>
             <td>_links</td>

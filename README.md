@@ -83,11 +83,11 @@ error.
             <td>One Event</td>
         </tr>
         <tr>
-            <td>/categories</td>
+            <td><a href="#categories-1">/categories</a></td>
             <td>List of Categories</td>
         </tr>
         <tr>
-            <td>/categories/{id}</td>
+            <td><a href="#categoriesid">/categories/{id}</a></td>
             <td>One Category</td>
         </tr>
     </tbody>

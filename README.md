@@ -427,11 +427,11 @@ Response fields are the same as ```instances/```.
     </thead>
     <tbody>
         <tr>
-            <td><a href="#events-1">events</a></td>
+            <td><a href="#events-1">/events</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>
-            <td><a href="#eventsid">events/{id}</a></td>
+            <td><a href="#eventsid">/events/{id}</a></td>
             <td>One Event</td>
         </tr>
     </tbody>
@@ -439,7 +439,7 @@ Response fields are the same as ```instances/```.
 
 ### events/
 
-Retrieve a list links to other event resources.
+Retrieve a list of links to other event resources.
 
 #### Example Response
 
@@ -513,6 +513,160 @@ Response:
     }
 
 See [Event Object Fields](#event-object-fields)
+
+## Categories
+
+### Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#categories-1">/categories</a></td>
+            <td>Index of available event resources</td>
+        </tr>
+        <tr>
+            <td><a href="#categoriesid">categories/{id}</a></td>
+            <td>One Event</td>
+        </tr>
+    </tbody>
+</table>
+
+### categories/
+
+Retrieve a list of categories and links to other category resources.
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/categories/
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/categories/"
+            }, 
+            "item": {
+                "href": "http://api.guggenheim.org/calendar/categories/{id}"
+            }
+        }, 
+        "categories": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/5"
+                    }, 
+                    "parent": {
+                        "_links": {
+                            "item": {
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
+                            }
+                        }, 
+                        "category": {
+                            "en": "Audience"
+                        }
+                    }
+                }, 
+                "category": {
+                    "en": "Adults"
+                }, 
+                "id": "5"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/6"
+                    }, 
+                    "parent": {
+                        "_links": {
+                            "item": {
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
+                            }
+                        }, 
+                        "category": {
+                            "en": "Audience"
+                        }
+                    }
+                }, 
+                "category": {
+                    "en": "Educators"
+                }, 
+                "id": "6"
+            }, 
+            {...},
+            {...},
+            ...
+        ]
+    }
+### categories/{id}
+
+Retrieve a single category.
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/categories/20
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/categories/20"
+            }, 
+            "parent": {
+                "_links": {
+                    "item": {
+                        "href": "http://api.guggenheim.org/calendar/categories/2"
+                    }
+                }, 
+                "category": {
+                    "en": "Event"
+                }
+            }
+        }, 
+        "category": {
+            "en": "Tours & Gallery Programs"
+        }, 
+        "id": "20", 
+        "instances": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/13445"
+                    }, 
+                    "event": {
+                        "href": "http://api.guggenheim.org/calendar/events/816"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/30/curators-eye-picasso-black-and-white/i/13445"
+                    }
+                }, 
+                "descriptions": {
+                    "en": "Join Joan Young, Director, Curatorial Affairs, for a tour of <em>Gabriel Orozco: Asterisms</em>. This Curator's Eye Tour will be ASL-interpreted."
+                }, 
+                "id": "13445", 
+                "start_date": "2012-11-30", 
+                "start_time": "14:00:00", 
+                "titles": {
+                    "en": "Curator's Eye"
+                }
+            }
+        ], 
+        "range": {
+            "end_date": "2012-11-30", 
+            "start_date": "2012-11-19"
+        }
+    }
 
 ### Instance Object Fields
 

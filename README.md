@@ -268,33 +268,22 @@ Response:
     </thead>
     <tbody>
         <tr>
-            <td>start_date</td>
-            <td>string</td>
-            <td>REQUIRED</td>
-            <td>Start date of the requested date range. Note: this MAY not be
-                the date of the first instance returned.</td>
-        </tr>
-        <tr>
-            <td>end_date</td>
-            <td>string</td>
-            <td>REQUIRED</td>
-            <td>End date of the requested date range. Note: this MAY not be
-                the date of the last instance returned.</td>
-        </tr>
-        <tr>
             <td>instances</td>
             <td>array</td>
             <td>REQUIRED</td>
             <td>An array of instance resources (see below).</td>
         </tr>
         <tr>
+            <td>range</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>An object with two properties, <code>start_date</code> and <code>end_date</code> (both "YYYY-MM-DD" date strings), indicating the date range covered by the request.</td>
+        </tr>
+        <tr>
             <td>_links</td>
             <td>object</td>
             <td>REQUIRED</td>
-            <td>A Links object. An Instances MUST contain a links to itself,
-                (<code>_self</code>) to its parent Event (<code>event</code>), 
-                and to its equivalent URL on the guggenheim.org website.
-                (<code>web</code>)</td>
+            <td>A Links object.</td>
         </tr>
 
     </tbody>
@@ -364,6 +353,35 @@ Response:
             }
         ]
     }
+
+#### Response Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>instances</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of instance resources (see below). This endpoint currently always returns an array containing one item, but in the future it may accept a list of instance ids to retrieve.</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object.</td>
+        </tr>
+
+    </tbody>
+</table>
+
 
 ### instances/{YYYY-MM-DD}
 

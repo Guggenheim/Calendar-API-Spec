@@ -135,11 +135,11 @@ One "event" may be repeated at different times, such as the showings of a film, 
             <td>List of Instances on the current day</td>
         </tr>
         <tr>
-            <td>calendar/instances/{id}</td>
+            <td><a href="#instancesid">calendar/instances/{id}</a></td>
             <td>One Instance</td>
         </tr>
         <tr>
-            <td>calendar/instances/{YYYY-MM-DD}</td>
+            <td><a href="#instancesyyyy-mm-dd">calendar/instances/{YYYY-MM-DD}</a></td>
             <td>List of Instances on the specified day</td>
         </tr>
     </tbody>
@@ -147,7 +147,7 @@ One "event" may be repeated at different times, such as the showings of a film, 
 
 ### instances/
 
-Retreive a list of instances for the current day and links to other endpoints.
+Retrieve a list of instances for the current day and links to other endpoints.
 
 #### Example Response
 
@@ -255,6 +255,52 @@ Response:
         }
     }
 
+#### Response Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>start_date</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>Start date of the requested date range. Note: this MAY not be
+                the date of the first instance returned.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>End date of the requested date range. Note: this MAY not be
+                the date of the last instance returned.</td>
+        </tr>
+        <tr>
+            <td>instances</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of instance resources (see below).</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object. An Instances MUST contain a links to itself,
+                (<code>_self</code>) to its parent Event (<code>event</code>), 
+                and to its equivalent URL on the guggenheim.org website.
+                (<code>web</code>)</td>
+        </tr>
+
+    </tbody>
+</table>
+
+
 ### instances/{id}
 
 Retrieve a single instance identified by ```id```
@@ -352,53 +398,8 @@ Retrieve a list of instances for the given date or date range. The range can be 
 
 
 
-### Response Fields
 
-<table>
-    <thead>
-        <tr>
-            <th>Field</th>
-            <th>Type</th>
-            <th>Req'd?</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>start_date</td>
-            <td>string</td>
-            <td>REQUIRED</td>
-            <td>Start date of the requested date range. Note: this MAY not be
-                the date of the first instance returned.</td>
-        </tr>
-        <tr>
-            <td>end_date</td>
-            <td>string</td>
-            <td>REQUIRED</td>
-            <td>End date of the requested date range. Note: this MAY not be
-                the date of the last instance returned.</td>
-        </tr>
-        <tr>
-            <td>instances</td>
-            <td>array</td>
-            <td>REQUIRED</td>
-            <td>An array of instance resources (see below).</td>
-        </tr>
-        <tr>
-            <td>_links</td>
-            <td>object</td>
-            <td>REQUIRED</td>
-            <td>A Links object. An Instances MUST contain a links to itself,
-                (<code>_self</code>) to its parent Event (<code>event</code>), 
-                and to its equivalent URL on the guggenheim.org website.
-                (<code>web</code>)</td>
-        </tr>
-
-    </tbody>
-</table>
-
-
-### Instance fields
+### Instance Object Fields
 
 <table>
     <thead>
@@ -465,16 +466,15 @@ Retrieve a list of instances for the given date or date range. The range can be 
             <td>categories</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of category object</td>
+            <td>An array of category objects</td>
         </tr>
         <tr>
             <td>_links</td>
             <td>object</td>
             <td>REQUIRED</td>
-            <td>A Links object. An Instance MUST contain a links to itself,
-                (<code>_self</code>) to its parent Event (<code>event</code>), 
-                and to its equivalent URL on the guggenheim.org website.
-                (<code>web</code>)</td>
+            <td>A Links object. An Instance MUST contain a links to itself
+                (<code>_self</code>), to its parent Event 
+                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).</td>
         </tr>
     </tbody>
 </table>

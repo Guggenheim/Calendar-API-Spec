@@ -63,24 +63,24 @@ error.
             <td>Index of available resources</td>
         </tr>
         <tr>
+            <td><a href="#instances-1">calendar/instances</a></td>
+            <td>List of Instances on the current day</td>
+        </tr>
+        <tr>
+            <td><a href="#instancesid">calendar/instances/{id}</a></td>
+            <td>One Instance</td>
+        </tr>
+        <tr>
+            <td><a href="#instancesyyyy-mm-dd">calendar/instances/{YYYY-MM-DD}</a></td>
+            <td>List of Instances on the specified day</td>
+        </tr>
+        <tr>
             <td>calendar/events/{id}</td>
             <td>One Event</td>
         </tr>
         <tr>
-            <td>calendar/instances</td>
-            <td>List of Instances on the current day</td>
-        </tr>
-        <tr>
-            <td>calendar/instances/{YYYY-MM-DD}</td>
-            <td>List of Instances on the specified day</td>
-        </tr>
-        <tr>
             <td>calendar/instances/{YYYY-MM}</td>
             <td>List of Instances in the specified month</td>
-        </tr>
-        <tr>
-            <td>calendar/instances/{id}</td>
-            <td>One Instance</td>
         </tr>
         <tr>
             <td>calendar/categories</td>
@@ -412,10 +412,7 @@ Retrieve a list of instances for the given date or date range. The range can be 
     </tbody>
 </table>
 
-
-
-
-
+Response fields are the same as ```instances/```.
 
 ### Instance Object Fields
 

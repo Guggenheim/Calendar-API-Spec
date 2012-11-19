@@ -59,35 +59,35 @@ error.
     </thead>
     <tbody>
         <tr>
-            <td>calendar/</td>
+            <td>/</td>
             <td>Index of available resources</td>
         </tr>
         <tr>
-            <td><a href="#instances-1">calendar/instances</a></td>
+            <td><a href="#instances-1">/instances</a></td>
             <td>List of Instances on the current day</td>
         </tr>
         <tr>
-            <td><a href="#instancesid">calendar/instances/{id}</a></td>
+            <td><a href="#instancesid">/instances/{id}</a></td>
             <td>One Instance</td>
         </tr>
         <tr>
-            <td><a href="#instancesyyyy-mm-dd">calendar/instances/{YYYY-MM-DD}</a></td>
+            <td><a href="#instancesyyyy-mm-dd">/instances/{YYYY-MM-DD}</a></td>
             <td>List of Instances on the specified day</td>
         </tr>
         <tr>
-            <td><a href="#events-1">/calendar/events</a></td>
+            <td><a href="#events-1">/events</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>
-            <td><a href="#eventsid">calendar/events/{id}</a></td>
+            <td><a href="#eventsid">/events/{id}</a></td>
             <td>One Event</td>
         </tr>
         <tr>
-            <td>calendar/categories</td>
+            <td>/categories</td>
             <td>List of Categories</td>
         </tr>
         <tr>
-            <td>calendar/categories/{id}</td>
+            <td>/categories/{id}</td>
             <td>One Category</td>
         </tr>
     </tbody>
@@ -131,15 +131,15 @@ One "event" may be repeated at different times, such as the showings of a film, 
     </thead>
     <tbody>
         <tr>
-            <td>/calendar/instances</td>
+            <td>/instances</td>
             <td>List of Instances on the current day</td>
         </tr>
         <tr>
-            <td><a href="#instancesid">calendar/instances/{id}</a></td>
+            <td><a href="#instancesid">/instances/{id}</a></td>
             <td>One Instance</td>
         </tr>
         <tr>
-            <td><a href="#instancesyyyy-mm-dd">calendar/instances/{YYYY-MM-DD}</a></td>
+            <td><a href="#instancesyyyy-mm-dd">/instances/{YYYY-MM-DD}</a></td>
             <td>List of Instances on the specified day</td>
         </tr>
     </tbody>
@@ -427,11 +427,11 @@ Response fields are the same as ```instances/```.
     </thead>
     <tbody>
         <tr>
-            <td><a href="#events-1">/calendar/events</a></td>
+            <td><a href="#events-1">events</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>
-            <td><a href="#eventsid">calendar/events/{id}</a></td>
+            <td><a href="#eventsid">events/{id}</a></td>
             <td>One Event</td>
         </tr>
     </tbody>

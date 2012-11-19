@@ -83,10 +83,6 @@ error.
             <td>One Event</td>
         </tr>
         <tr>
-            <td>calendar/instances/{YYYY-MM}</td>
-            <td>List of Instances in the specified month</td>
-        </tr>
-        <tr>
             <td>calendar/categories</td>
             <td>List of Categories</td>
         </tr>

@@ -75,7 +75,7 @@ error.
             <td>List of Instances on the specified day</td>
         </tr>
         <tr>
-            <td><a href="#events-1"/calendar/events</a></td>
+            <td><a href="#events-1">/calendar/events</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>
@@ -427,7 +427,7 @@ Response fields are the same as ```instances/```.
     </thead>
     <tbody>
         <tr>
-            <td><a href="#events-1"/calendar/events</a></td>
+            <td><a href="#events-1">/calendar/events</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>

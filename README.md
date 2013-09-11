@@ -815,7 +815,7 @@ Response:
     </tbody>
 </table>
  
-## Categories
+## Second Categories
 
 ### Endpoints
 
@@ -828,88 +828,121 @@ Response:
     </thead>
     <tbody>
         <tr>
-            <td><a href="#categories-1">/categories</a></td>
+            <td><a href="#second_categories-1">/second_categories</a></td>
             <td>Index of available event resources</td>
         </tr>
         <tr>
-            <td><a href="#categoriesid">categories/{id}</a></td>
+            <td><a href="#second_categoriesid">second_categories/{id}</a></td>
             <td>One Event</td>
         </tr>
     </tbody>
 </table>
 
-### categories/
+### second_categories/
 
-Retrieve a list of categories and links to other category resources.
+Retrieve a list of second categories and links to other second category resources.
 
 #### Example Response
 
 Request:
 
-    http://api.guggenheim.org/calendar/categories/
+    http://api.guggenheim.org/calendar/second_categories/
 
 Response:
 
-    {
-        "_links": {
-            "_self": {
-                "href": "http://api.guggenheim.org/calendar/categories/"
-            }, 
-            "item": {
-                "href": "http://api.guggenheim.org/calendar/categories/{id}"
-            }
-        }, 
-        "categories": [
-            {
-                "_links": {
-                    "_self": {
-                        "href": "http://api.guggenheim.org/calendar/categories/5"
-                    }, 
-                    "parent": {
-                        "_links": {
-                            "item": {
-                                "href": "http://api.guggenheim.org/calendar/categories/1"
-                            }
-                        }, 
-                        "category": {
-                            "en": "Audience"
-                        }
-                    }
-                }, 
-                "category": {
-                    "en": "Adults"
-                }, 
-                "id": "5"
-            }, 
-            {
-                "_links": {
-                    "_self": {
-                        "href": "http://api.guggenheim.org/calendar/categories/6"
-                    }, 
-                    "parent": {
-                        "_links": {
-                            "item": {
-                                "href": "http://api.guggenheim.org/calendar/categories/1"
-                            }
-                        }, 
-                        "category": {
-                            "en": "Audience"
-                        }
-                    }
-                }, 
-                "category": {
-                    "en": "Educators"
-                }, 
-                "id": "6"
-            }, 
-            {...},
-            {...},
-            ...
-        ]
+     {
+    	"_links": {
+    		"_self": {
+    			"href": "http://api.guggenheim.org/calendar/second_categories/"
+    		},
+    		"item": {
+    			"href": "http://api.guggenheim.org/calendar/second_categories/{id}"
+    		}
+    	},
+    	"second_categories": [
+    		{
+    			"id": "8",
+    			"category": {
+    				"en": "For Educators"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/8"
+    				}
+    			}
+    		},
+    		{
+    			"id": "6",
+    			"category": {
+    				"en": "For Kids"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/6"
+    				}
+    			}
+    		},
+    		{
+    			"id": "5",
+    			"category": {
+    				"en": "For Members Only"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/5"
+    				}
+    			}
+    		},
+    		{
+    			"id": "9",
+    			"category": {
+    				"en": "For Visitor with Disabilities"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/9"
+    				}
+    			}
+    		},
+    		{
+    			"id": "2",
+    			"category": {
+    				"en": "Free with Admission"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/2"
+    				}
+    			}
+    		},
+    		{
+    			"id": "24",
+    			"category": {
+    				"en": "Online Events"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/24"
+    				}
+    			}
+    		},
+    		{
+    			"id": "7",
+    			"category": {
+    				"en": "Teens & Family"
+    			},
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/second_categories/7"
+    				}
+    			}
+    		}
+    	]
     }
-### categories/{id}
 
-Retrieve a single category.
+### second_categories/{id}
+
+Retrieve a single second category.
 
 #### Example Response
 

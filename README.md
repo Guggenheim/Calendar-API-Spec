@@ -815,3 +815,371 @@ Response:
     </tbody>
 </table>
  
+## Categories
+
+### Endpoints
+
+<table>
+    <thead>
+        <tr>
+            <th>Endpoint</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#categories-1">/categories</a></td>
+            <td>Index of available event resources</td>
+        </tr>
+        <tr>
+            <td><a href="#categoriesid">categories/{id}</a></td>
+            <td>One Event</td>
+        </tr>
+    </tbody>
+</table>
+
+### categories/
+
+Retrieve a list of categories and links to other category resources.
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/categories/
+
+Response:
+
+    {
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/categories/"
+            }, 
+            "item": {
+                "href": "http://api.guggenheim.org/calendar/categories/{id}"
+            }
+        }, 
+        "categories": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/5"
+                    }, 
+                    "parent": {
+                        "_links": {
+                            "item": {
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
+                            }
+                        }, 
+                        "category": {
+                            "en": "Audience"
+                        }
+                    }
+                }, 
+                "category": {
+                    "en": "Adults"
+                }, 
+                "id": "5"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/6"
+                    }, 
+                    "parent": {
+                        "_links": {
+                            "item": {
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
+                            }
+                        }, 
+                        "category": {
+                            "en": "Audience"
+                        }
+                    }
+                }, 
+                "category": {
+                    "en": "Educators"
+                }, 
+                "id": "6"
+            }, 
+            {...},
+            {...},
+            ...
+        ]
+    }
+### categories/{id}
+
+Retrieve a single category.
+
+#### Example Response
+
+Request:
+
+    http://api.guggenheim.org/calendar/second_categories/5
+
+Response:
+
+    {
+    	"id": "5",
+    	"category": {
+    		"en": "For Members Only"
+    	},
+    	"_links": {
+    		"_self": {
+    			"href": "http://api.guggenheim.org/calendar/second_categories/5"
+    		}
+    	},
+    	"range": {
+    		"start_date": "2013-09-11",
+    		"end_date": "2013-09-30"
+    	},
+    	"instances": [
+    		{
+    			"id": "1375",
+    			"titles": {
+    				"en": "Members\u2019 Morning Private View\u2014James Turrell"
+    			},
+    			"descriptions": {
+    				"en": "Beat the crowds and join fellow members for a visit to the museum before it opens to the public. Enjoy a private viewing of the exhibition <em>James Turrell</em>. James Turrell\u2019s first exhibition in a New York museum since 1980 focuses on the artist\u2019s groundbreaking explorations of perception, light, color, and space, with a special focus on the role of site-specificity in his practice. At its core is a major new project that recasts the Guggenheim rotunda as an enormous volume filled with shifting artificial and natural light. One of the most dramatic transformations of the museum ever conceived, the installation reimagines Frank Lloyd Wright\u2019s iconic architecture\u2014its openness to nature, graceful curves, and magnificent sense of space\u2014as one of Turrell\u2019s <em>Skyspaces</em>, referencing in particular his magnum opus <em>Roden Crater</em> (1976\u2013 ). Become a member today and enjoy this unique opportunity to see the museum and attend many other exclusive events."
+    			},
+    			"start_date": "2013-09-15",
+    			"start_time": "09:00:00",
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/instances/1375"
+    				},
+    				"event": {
+    					"href": "http://api.guggenheim.org/calendar/events/737"
+    				},
+    				"web": {
+    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/15/members-morning-private-viewjames-turrell/1375"
+    				}
+    			}
+    		},
+    		{
+    			"id": "2376",
+    			"titles": {
+    				"en": "Private Tour of Music at the Aldrich"
+    			},
+    			"descriptions": {
+    				"en": "Join the Aldrich Contemporary Art Museum\u2019s Exhibitions Director Richard Klein, Curator Amy Smith-Stewart, and curatorial consultant Kelly Taxter for a private tour of the exhibition <em>Music</em> on its opening day. The opening will feature the premiere of <em>Number 17</em>, an endurance-based performance by Xaviera Simmons. Food will be available for purchase from food trucks in the Sculpture Garden. Transportation will be provided by the Aldrich for a fee of $15 and will depart at 12:30 pm from MoMA PS1 in Long Island City, returning at 6 pm."
+    			},
+    			"start_date": "2013-09-22",
+    			"start_time": "14:00:00",
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/instances/2376"
+    				},
+    				"event": {
+    					"href": "http://api.guggenheim.org/calendar/events/819"
+    				},
+    				"web": {
+    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/22/private-tour-of-music-at-the-aldrich/2376"
+    				}
+    			}
+    		},
+    		{
+    			"id": "2280",
+    			"titles": {
+    				"en": "Members-Only Quiet Views of Aten Reign"
+    			},
+    			"descriptions": {
+    				"en": "Given the popularity of the <em>James Turrell</em> exhibition as well as the intimate, meditative nature of Turrell\u2019s work, we are adding special opportunities for Guggenheim members to spend a quiet hour communing with <em>Aten Reign</em> during a new series of exclusive events."
+    			},
+    			"start_date": "2013-09-23",
+    			"start_time": "19:30:00",
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/instances/2280"
+    				},
+    				"event": {
+    					"href": "http://api.guggenheim.org/calendar/events/814"
+    				},
+    				"web": {
+    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/23/members-only-quiet-view-of-james-turrell/2280"
+    				}
+    			}
+    		},
+    		{
+    			"id": "2281",
+    			"titles": {
+    				"en": "Members-Only Quiet Views of Aten Reign"
+    			},
+    			"descriptions": {
+    				"en": "Given the popularity of the <em>James Turrell</em> exhibition as well as the intimate, meditative nature of Turrell\u2019s work, we are adding special opportunities for Guggenheim members to spend a quiet hour communing with <em>Aten Reign</em> during a new series of exclusive events."
+    			},
+    			"start_date": "2013-09-23",
+    			"start_time": "21:00:00",
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/instances/2281"
+    				},
+    				"event": {
+    					"href": "http://api.guggenheim.org/calendar/events/814"
+    				},
+    				"web": {
+    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/23/members-only-quiet-view-of-james-turrell/2281"
+    				}
+    			}
+    		},
+    		{
+    			"id": "2377",
+    			"titles": {
+    				"en": "Artist Dinner with Julia Dault"
+    			},
+    			"descriptions": {
+    				"en": "Join fellow Young Collectors Council members for an intimate dinner with artist Julia Dault, hosted by YCC cochair Astrid T. Hill. In 2012, the YCC Acquisitions Committee voted to acquire Julia Dault&rsquo;s painting <em>Heavy Metal</em> (2012). This exclusive event, open only to YCC members, includes a three-course dinner in the museum&rsquo;s James Beard Award&ndash;winning restaurant the Wright followed by a conversation between the artist and Associate Curator Katherine Brinson. Tickets are $125 per person; proceeds benefit the YCC Art Fund. Cocktail attire is suggested."
+    			},
+    			"start_date": "2013-09-24",
+    			"start_time": "19:00:00",
+    			"_links": {
+    				"_self": {
+    					"href": "http://api.guggenheim.org/calendar/instances/2377"
+    				},
+    				"event": {
+    					"href": "http://api.guggenheim.org/calendar/events/820"
+    				},
+    				"web": {
+    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/24/artist-dinner-with-julia-dault/2377"
+    				}
+    			}
+    		}
+    	]
+    }
+
+### Instance Object Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>number</td>
+            <td>REQUIRED</td>
+            <td>Unique ID number for the Instance</td>
+        </tr>
+        <tr>
+            <td>titles</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized titles for the event. Available titles are 
+                listed by ISO-639-1 language code.</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized descriptions for the event, also
+                listed by ISO-639-1 language code. Descriptions may contain 
+                HTML markup and should be handled accordingly.</td>
+        </tr>
+        <tr>
+            <td>start_date</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>Start date of the instance in YYYY-MM-DD format</td>
+        </tr>
+        <tr>
+            <td>start_time</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>Start time of the instance in HH:MM format using a 24-hour
+                clock.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>string</td>
+            <td>OPTIONAL</td>
+            <td>End date of the instance in YYYY-MM-DD format. Currently no 
+                instances have an end_date, but we may at any time add them to
+                the API. After that this property will be REQUIRED.</td>
+        </tr>
+        <tr>
+            <td>end_time</td>
+            <td>string</td>
+            <td>OPTIONAL</td>
+            <td>End time of the instance in HH:MM format using a 24-hour
+                clock. Currently no instances have an end_time, but we may at 
+                any time add them to the API. After that this property will be 
+                REQUIRED.</td>
+        </tr>
+        <tr>
+            <td>categories</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of category objects</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object. An Instance MUST contain a links to itself
+                (<code>_self</code>), to its parent Event 
+                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).</td>
+        </tr>
+    </tbody>
+</table>
+
+### Event Object Fields
+
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Req'd?</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>number</td>
+            <td>REQUIRED</td>
+            <td>Unique ID number for the Event</td>
+        </tr>
+        <tr>
+            <td>titles</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized titles for the event. Available titles are 
+                listed by ISO-639-1 language code.</td>
+        </tr>
+        <tr>
+            <td>descriptions</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>Internationalized descriptions for the event, also
+                listed by ISO-639-1 language code. Descriptions may contain 
+                HTML markup and should be handled accordingly.</td>
+        </tr>
+        <tr>
+            <td>categories</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of category objects</td>
+        </tr>
+        <tr>
+            <td>instances</td>
+            <td>array</td>
+            <td>REQUIRED</td>
+            <td>An array of instance objects</td>
+        </tr>
+        <tr>
+            <td>_links</td>
+            <td>object</td>
+            <td>REQUIRED</td>
+            <td>A Links object. An Instance MUST contain a links to itself
+                (<code>_self</code>), to its parent Event 
+                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).</td>
+        </tr>
+    </tbody>
+</table>
+ 

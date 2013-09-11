@@ -90,6 +90,14 @@ error.
             <td><a href="#categoriesid">/categories/{id}</a></td>
             <td>One Category</td>
         </tr>
+        <tr>
+            <td><a href="#second_categories-1">/second_categories</a></td>
+            <td>List of Categories</td>
+        </tr>
+        <tr>
+            <td><a href="#second_categoriesid">/second_categories/{id}</a></td>
+            <td>One Category</td>
+        </tr>
     </tbody>
 </table>
 
@@ -100,15 +108,18 @@ The root endpoint will simply return a list of available endpoints
             "_self": {
                 "href": "http://api.guggenheim.org/calendar/"
             }, 
-            "categories": {
-                "href": "http://api.guggenheim.org/calendar/categories/"
-            }, 
             "events": {
                 "href": "http://api.guggenheim.org/calendar/events/"
             }, 
             "instances": {
                 "href": "http://api.guggenheim.org/calendar/instances/"
-            }
+            },
+            "categories": {
+                "href": "http://api.guggenheim.org/calendar/categories/"
+            }, 
+            "second_categories": {
+                "href": "http://api.guggenheim.org/calendar/second_categories/"
+            }, 
         }
     }
 

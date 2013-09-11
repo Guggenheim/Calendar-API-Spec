@@ -617,6 +617,7 @@ Response:
             ...
         ]
     }
+
 ### categories/{id}
 
 Retrieve a single category.

@@ -598,21 +598,55 @@ Response:
             {
                 "_links": {
                     "_self": {
-                        "href": "http://api.guggenheim.org/calendar/categories/5"
-                    }, 
-                    "parent": {
-                        "_links": {
-                            "item": {
-                                "href": "http://api.guggenheim.org/calendar/categories/1"
-                            }
-                        }, 
-                        "category": {
-                            "en": "Audience"
-                        }
+                        "href": "http://api.guggenheim.org/calendar/categories/1"
                     }
                 }, 
                 "category": {
-                    "en": "Adults"
+                    "en": "Tours & Gallery Programs"
+                }, 
+                "id": "1"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/2"
+                    }
+                }, 
+                "category": {
+                    "en": "Concerts & Performances"
+                }, 
+                "id": "2"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/3"
+                    }
+                }, 
+                "category": {
+                    "en": "Lectures & Symposia"
+                }, 
+                "id": "3"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/4"
+                    }
+                }, 
+                "category": {
+                    "en": "Film Screenings"
+                }, 
+                "id": "4"
+            }, 
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/categories/5"
+                    }
+                }, 
+                "category": {
+                    "en": "Special Events"
                 }, 
                 "id": "5"
             }, 
@@ -620,26 +654,13 @@ Response:
                 "_links": {
                     "_self": {
                         "href": "http://api.guggenheim.org/calendar/categories/6"
-                    }, 
-                    "parent": {
-                        "_links": {
-                            "item": {
-                                "href": "http://api.guggenheim.org/calendar/categories/1"
-                            }
-                        }, 
-                        "category": {
-                            "en": "Audience"
-                        }
                     }
                 }, 
                 "category": {
-                    "en": "Educators"
+                    "en": "Courses & Workshops"
                 }, 
                 "id": "6"
-            }, 
-            {...},
-            {...},
-            ...
+            }
         ]
     }
 

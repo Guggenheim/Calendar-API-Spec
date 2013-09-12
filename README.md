@@ -91,7 +91,7 @@ error.
             <td>One Category</td>
         </tr>
         <tr>
-            <td><a href="#second_categories-1">/second_categories</a></td>
+            <td><a href="#second_categories">/second_categories</a></td>
             <td>List of Categories</td>
         </tr>
         <tr>

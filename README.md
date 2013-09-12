@@ -482,47 +482,69 @@ Retrieve a single event
 
 Request:
 
-    http://api.guggenheim.org/calendar/events/815
+    http://api.guggenheim.org/calendar/events/831
 
 Response:
 
     {
         "_links": {
             "_self": {
-                "href": "http://api.guggenheim.org/calendar/events/815"
+                "href": "http://api.guggenheim.org/calendar/events/831"
             }
         }, 
         "categories": [
             {
                 "_links": {
                     "_self": {
-                        "href": "http://api.guggenheim.org/calendar/categories/20"
+                        "href": "http://api.guggenheim.org/calendar/categories/1"
                     }
                 }, 
-                "id": "20", 
+                "id": "1", 
                 "titles": "Tours & Gallery Programs"
             }
         ], 
         "descriptions": {
-            "en": "Join Esther Chao, Associate Conservator, Objects, for a tour of <em>Gabriel Orozco: Asterisms</em>."
+            "en": "Young Collectors Council members are invited to attend the opening reception for <em>Super/Natural Contemporary Korean Art</em>, a private sales exhibition at Christie\u2019s. In addition, Christie\u2019s can accommodate a small group of YCC members for an exclusive tour to preview two of Christie\u2019s upcoming auctions: <em>South Asian Modern + Contemporary Art</em> and <em>The Art of Nandalal Bose, Abanindranath Tagore and Rabindranath Tagore: The Supratik Bose Collection</em>. Please specify in your RSVP if you would like to attend the tour and reception or just the reception. Space is limited for the tour but not the reception."
         }, 
         "instances": [
             {
                 "_links": {
                     "_self": {
-                        "href": "http://api.guggenheim.org/calendar/instances/13444"
+                        "href": "http://api.guggenheim.org/calendar/instances/2392"
+                    }, 
+                    "rsvp": {
+                        "href": "mailto:ycc@guggenheim.org"
                     }, 
                     "web": {
-                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/conservators-eye/i/13444"
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/12/opening-reception-supernatural-contemporary-korean-art-/2392"
                     }
                 }, 
-                "id": "13444", 
-                "start_date": "2012-11-16", 
-                "start_time": "14:00:00"
+                "id": "2392", 
+                "sold_out": false, 
+                "start_date": "2013-09-12", 
+                "start_time": "18:00:00"
+            }
+        ], 
+        "media": [
+            {
+                "assets": {
+                    "thumbnail": {
+                        "_links": {
+                            "_self": {
+                                "href": "http://media.guggenheim.org/content/New_York/events/stock/ycc-only.png"
+                            }
+                        }, 
+                        "height": 135, 
+                        "width": 205
+                    }
+                }, 
+                "format": "PNG", 
+                "orientation": "landscape", 
+                "type": "Image"
             }
         ], 
         "titles": {
-            "en": "Conservator's Eye"
+            "en": "Opening Reception: Super/Natural Contemporary Korean Art"
         }
     }
 

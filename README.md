@@ -142,7 +142,7 @@ One "event" may be repeated at different times, such as the showings of a film, 
     </thead>
     <tbody>
         <tr>
-            <td>/instances</td>
+            <td><a href="#instances">/instances</a></td>
             <td>List of Instances on the current day</td>
         </tr>
         <tr>

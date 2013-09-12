@@ -262,7 +262,7 @@ Response:
             <td>instances</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of instance resources (see below).</td>
+            <td>An array of instance resources (<a href="#instance-object-fields">see below</a>).</td>
         </tr>
         <tr>
             <td>range</td>
@@ -384,7 +384,7 @@ Response:
             <td>instances</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of instance resources (see below). This endpoint currently always returns an array containing one item, but in the future it may accept a list of instance ids to retrieve.</td>
+            <td>An array of instance resources (<a href="#instance-object-fields">see below</a>). This endpoint currently always returns an array containing one item, but in the future it may accept a list of instance ids to retrieve.</td>
         </tr>
         <tr>
             <td>_links</td>

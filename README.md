@@ -1074,6 +1074,12 @@ Response:
             <td>An array of media objects connected to the parent event.</td>
         </tr>
         <tr>
+            <td>sold_out</td>
+            <td>string</td>
+            <td>REQUIRED</td>
+            <td>A string which returns either <code>true</code> or <code>false</code> based on the sold out status of an instance.</td>
+        </tr>
+        <tr>
             <td>_links</td>
             <td>object</td>
             <td>REQUIRED</td>

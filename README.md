@@ -1007,7 +1007,7 @@ Response:
             <td>id</td>
             <td>number</td>
             <td>REQUIRED</td>
-            <td>Unique ID number for the Instance</td>
+            <td>Unique ID number for the Instance.</td>
         </tr>
         <tr>
             <td>titles</td>
@@ -1028,14 +1028,13 @@ Response:
             <td>start_date</td>
             <td>string</td>
             <td>REQUIRED</td>
-            <td>Start date of the instance in YYYY-MM-DD format</td>
+            <td>Start date of the instance in YYYY-MM-DD format.</td>
         </tr>
         <tr>
             <td>start_time</td>
             <td>string</td>
             <td>REQUIRED</td>
-            <td>Start time of the instance in HH:MM format using a 24-hour
-                clock.</td>
+            <td>Start time of the instance in HH:MM format using a 24-hour clock.</td>
         </tr>
         <tr>
             <td>end_date</td>
@@ -1058,13 +1057,15 @@ Response:
             <td>categories</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of category objects</td>
+            <td>An array of category objects.</td>
         </tr>
         <tr>
             <td>second_categories</td>
             <td>array</td>
             <td>OPTIONAL</td>
-            <td>An array of second category objects. Second categories are optional in the data entry of events & might not be present in all events or instances thus this is optional.</td>
+            <td>An array of second category objects. Second categories are optional
+                in the data entry of events & might not be present in all events or
+                instances thus this is optional.</td>
         </tr>
         <tr>
             <td>_links</td>
@@ -1093,7 +1094,7 @@ Response:
             <td>id</td>
             <td>number</td>
             <td>REQUIRED</td>
-            <td>Unique ID number for the Event</td>
+            <td>Unique ID number for the Event.</td>
         </tr>
         <tr>
             <td>titles</td>
@@ -1114,19 +1115,21 @@ Response:
             <td>categories</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of category objects</td>
+            <td>An array of category objects.</td>
         </tr>
         <tr>
             <td>second_categories</td>
             <td>array</td>
             <td>OPTIONAL</td>
-            <td>An array of second category objects. Second categories are optional in the data entry of events & might not be present in all events or instances thus this is optional.</td>
+            <td>An array of second category objects. Second categories are optional
+                in the data entry of events & might not be present in all events or
+                instances thus this is optional.</td>
         </tr>
         <tr>
             <td>instances</td>
             <td>array</td>
             <td>REQUIRED</td>
-            <td>An array of instance objects</td>
+            <td>An array of instance objects.</td>
         </tr>
         <tr>
             <td>_links</td>

@@ -1117,6 +1117,12 @@ Response:
             <td>An array of category objects</td>
         </tr>
         <tr>
+            <td>second_categories</td>
+            <td>array</td>
+            <td>OPTIONAL</td>
+            <td>An array of second category objects. Second categories are optional in the data entry of events & might not be present in all events or instances thus this is optional.</td>
+        </tr>
+        <tr>
             <td>instances</td>
             <td>array</td>
             <td>REQUIRED</td>

@@ -289,57 +289,80 @@ Retrieve a single instance identified by ```id```
 
 Request:
 
-    http://api.guggenheim.org/calendar/instances/13444
+    http://api.guggenheim.org/calendar/instances/1604
 
 Response:
 
     {
         "_links": {
             "_self": {
-                "href": "http://api.guggenheim.org/calendar/instances/13444"
-            }, 
-            "day": {
-                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
-            }, 
-            "item": {
-                "href": "http://api.guggenheim.org/calendar/instances/{id}"
-            }, 
-            "month": {
-                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM}"
+                "href": "http://api.guggenheim.org/calendar/instances/1604"
             }
         }, 
         "instances": [
             {
                 "_links": {
                     "_self": {
-                        "href": "http://api.guggenheim.org/calendar/instances/13444"
+                        "href": "http://api.guggenheim.org/calendar/instances/1604"
                     }, 
                     "event": {
-                        "href": "http://api.guggenheim.org/calendar/events/815"
+                        "href": "http://api.guggenheim.org/calendar/events/792"
                     }, 
                     "web": {
-                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2012/11/16/conservators-eye/i/13444"
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/13/educators-eye-daily-public-tour/1604"
                     }
                 }, 
                 "categories": [
                     {
                         "_links": {
                             "_self": {
-                                "href": "http://api.guggenheim.org/calendar/categories/20"
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
                             }
                         }, 
-                        "id": "20", 
+                        "id": "1", 
                         "titles": "Tours & Gallery Programs"
                     }
                 ], 
                 "descriptions": {
-                    "en": "Join Esther Chao, Associate Conservator, Objects, for a tour of <em>Gabriel Orozco: Asterisms</em>."
+                    "en": "Daily tours are led by museum educators with diverse backgrounds in art history, art education, and artistic practice related to Modern and contemporary art. Educators are committed to providing informative and meaningful experiences by engaging visitors in a shared process of close looking and conversation. For everyone from first-time visitors to long-term members, daily tours are invaluable for learning about the collections, special exhibitions, and the Frank Lloyd Wright building. Visitors of all ages and abilities are encouraged and welcome to join. Daily tours are free with museum admission and offered at 11 am and 1 pm. Assistive listening devices are used on all daily tours."
                 }, 
-                "id": "13444", 
-                "start_date": "2012-11-16", 
-                "start_time": "14:00:00", 
+                "id": "1604", 
+                "media": [
+                    {
+                        "assets": {
+                            "thumbnail": {
+                                "_links": {
+                                    "_self": {
+                                        "href": "http://media.guggenheim.org/content/New_York/events/stock/edseyetour.png"
+                                    }
+                                }, 
+                                "height": 135, 
+                                "width": 205
+                            }
+                        }, 
+                        "format": "PNG", 
+                        "orientation": "landscape", 
+                        "type": "Image"
+                    }
+                ], 
+                "second_categories": [
+                    [
+                        {
+                            "_links": {
+                                "_self": {
+                                    "href": "http://api.guggenheim.org/calendar/second_categories/2"
+                                }
+                            }, 
+                            "id": "2", 
+                            "titles": "Free with Admission"
+                        }
+                    ]
+                ], 
+                "sold_out": false, 
+                "start_date": "2013-09-13", 
+                "start_time": "11:00:00", 
                 "titles": {
-                    "en": "Conservator's Eye"
+                    "en": "Educator\u2019s Eye Daily Public Tour"
                 }
             }
         ]

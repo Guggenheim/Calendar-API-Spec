@@ -1068,6 +1068,12 @@ Response:
                 instances thus this is optional.</td>
         </tr>
         <tr>
+            <td>media</td>
+            <td>array</td>
+            <td>OPTIONAL</td>
+            <td>An array of media objects connected to the parent event.</td>
+        </tr>
+        <tr>
             <td>_links</td>
             <td>object</td>
             <td>REQUIRED</td>
@@ -1124,6 +1130,12 @@ Response:
             <td>An array of second category objects. Second categories are optional
                 in the data entry of events & might not be present in all events or
                 instances thus this is optional.</td>
+        </tr>
+        <tr>
+            <td>media</td>
+            <td>array</td>
+            <td>OPTIONAL</td>
+            <td>An array of media objects connected to the event.</td>
         </tr>
         <tr>
             <td>instances</td>

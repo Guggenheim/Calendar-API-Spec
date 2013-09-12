@@ -1085,7 +1085,10 @@ Response:
             <td>REQUIRED</td>
             <td>A Links object. An Instance MUST contain a links to itself
                 (<code>_self</code>), to its parent Event 
-                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).</td>
+                (<code>event</code>), and to its equivalent URL on the guggenheim.org website (<code>web</code>).
+                May also contain an optional <code>buy_tickets</code>, <code>register</code> and <code>rsvp</code> 
+                value which contains a link that can be a standard weblink or an e-mail (aka: “mailto:”) link to
+                a corresponding address where one can buy tickets, register or R.S.V.P. an event.</td>
         </tr>
     </tbody>
 </table>

@@ -143,15 +143,15 @@ One "event" may be repeated at different times, such as the showings of a film, 
     <tbody>
         <tr>
             <td><a href="#instances">/instances</a></td>
-            <td>List of Instances on the current day</td>
+            <td>List of Instances on the current day.</td>
         </tr>
         <tr>
             <td><a href="#instancesid">/instances/{id}</a></td>
-            <td>One Instance</td>
+            <td>One Instance.</td>
         </tr>
         <tr>
             <td><a href="#instancesyyyy-mm-dd">/instances/{YYYY-MM-DD}</a></td>
-            <td>List of Instances on the specified day</td>
+            <td>List of Instances on the specified day.</td>
         </tr>
     </tbody>
 </table>
@@ -442,11 +442,11 @@ Response fields are the same as ```instances/```.
     <tbody>
         <tr>
             <td><a href="#events-1">/events</a></td>
-            <td>Index of available event resources</td>
+            <td>Index of available event resources.</td>
         </tr>
         <tr>
             <td><a href="#eventsid">/events/{id}</a></td>
-            <td>One Event</td>
+            <td>One Event.</td>
         </tr>
     </tbody>
 </table>
@@ -564,11 +564,11 @@ See [Event Object Fields](#event-object-fields)
     <tbody>
         <tr>
             <td><a href="#categories-1">/categories</a></td>
-            <td>Index of available event resources</td>
+            <td>Index of available event resources.</td>
         </tr>
         <tr>
-            <td><a href="#categoriesid">categories/{id}</a></td>
-            <td>One Event</td>
+            <td><a href="#categoriesid">/categories/{id}</a></td>
+            <td>One Event.</td>
         </tr>
     </tbody>
 </table>
@@ -740,11 +740,11 @@ Response:
     <tbody>
         <tr>
             <td><a href="#second_categories-1">/second_categories</a></td>
-            <td>Index of available event resources</td>
+            <td>Index of available event resources.</td>
         </tr>
         <tr>
-            <td><a href="#second_categoriesid">second_categories/{id}</a></td>
-            <td>One Event</td>
+            <td><a href="#second_categoriesid">/second_categories/{id}</a></td>
+            <td>One Event.</td>
         </tr>
     </tbody>
 </table>

@@ -169,81 +169,81 @@ Request:
 Response:
 
     {
-    	"_links": {
-    		"_self": {
-    			"href": "http://api.guggenheim.org/calendar/instances/"
-    		},
-    		"item": {
-    			"href": "http://api.guggenheim.org/calendar/instances/{id}"
-    		},
-    		"day": {
-    			"href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
-    		},
-    		"month": {
-    			"href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM}"
-    		}
-    	},
-    	"range": {
-    		"start_date": "2013-09-12",
-    		"end_date": "2013-09-12"
-    	},
-    	"instances": [
-    		{
-    			"id": "2392",
-    			"titles": {
-    				"en": "Opening Reception: Super/Natural Contemporary Korean Art"
-    			},
-    			"descriptions": {
-    				"en": "Young Collectors Council members are invited to attend the opening reception for <em>Super/Natural Contemporary Korean Art</em>, a private sales exhibition at Christie\u2019s. In addition, Christie\u2019s can accommodate a small group of YCC members for an exclusive tour to preview two of Christie\u2019s upcoming auctions: <em>South Asian Modern + Contemporary Art</em> and <em>The Art of Nandalal Bose, Abanindranath Tagore and Rabindranath Tagore: The Supratik Bose Collection</em>. Please specify in your RSVP if you would like to attend the tour and reception or just the reception. Space is limited for the tour but not the reception."
-    			},
-    			"categories": [
-    				{
-    					"id": "1",
-    					"titles": "Tours & Gallery Programs",
-    					"_links": {
-    						"_self": {
-    							"href": "http://api.guggenheim.org/calendar/categories/1"
-    						}
-    					}
-    				}
-    			],
-    			"media": [
-    				{
-    					"assets": {
-    						"thumbnail": {
-    							"_links": {
-    								"_self": {
-    									"href": "http://media.guggenheim.org/content/New_York/events/stock/ycc-only.png"
-    								}
-    							},
-    							"width": 205,
-    							"height": 135
-    						}
-    					},
-    					"format": "PNG",
-    					"orientation": "landscape",
-    					"type": "Image"
-    				}
-    			],
-    			"start_date": "2013-09-12",
-    			"start_time": "18:00:00",
-    			"sold_out": false,
-    			"_links": {
-    				"_self": {
-    					"href": "http://api.guggenheim.org/calendar/instances/2392"
-    				},
-    				"event": {
-    					"href": "http://api.guggenheim.org/calendar/events/831"
-    				},
-    				"web": {
-    					"href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/12/opening-reception-supernatural-contemporary-korean-art-/2392"
-    				},
-    				"rsvp": {
-    					"href": "mailto:ycc@guggenheim.org"
-    				}
-    			}
-    		}
-    	]
+        "_links": {
+            "_self": {
+                "href": "http://api.guggenheim.org/calendar/instances/"
+            }, 
+            "day": {
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM-DD}"
+            }, 
+            "item": {
+                "href": "http://api.guggenheim.org/calendar/instances/{id}"
+            }, 
+            "month": {
+                "href": "http://api.guggenheim.org/calendar/instances/{YYYY-MM}"
+            }
+        }, 
+        "instances": [
+            {
+                "_links": {
+                    "_self": {
+                        "href": "http://api.guggenheim.org/calendar/instances/2392"
+                    }, 
+                    "event": {
+                        "href": "http://api.guggenheim.org/calendar/events/831"
+                    }, 
+                    "rsvp": {
+                        "href": "mailto:ycc@guggenheim.org"
+                    }, 
+                    "web": {
+                        "href": "http://www.guggenheim.org/new-york/calendar-and-events/2013/09/12/opening-reception-supernatural-contemporary-korean-art-/2392"
+                    }
+                }, 
+                "categories": [
+                    {
+                        "_links": {
+                            "_self": {
+                                "href": "http://api.guggenheim.org/calendar/categories/1"
+                            }
+                        }, 
+                        "id": "1", 
+                        "titles": "Tours & Gallery Programs"
+                    }
+                ], 
+                "descriptions": {
+                    "en": "Young Collectors Council members are invited to attend the opening reception for <em>Super/Natural Contemporary Korean Art</em>, a private sales exhibition at Christie\u2019s. In addition, Christie\u2019s can accommodate a small group of YCC members for an exclusive tour to preview two of Christie\u2019s upcoming auctions: <em>South Asian Modern + Contemporary Art</em> and <em>The Art of Nandalal Bose, Abanindranath Tagore and Rabindranath Tagore: The Supratik Bose Collection</em>. Please specify in your RSVP if you would like to attend the tour and reception or just the reception. Space is limited for the tour but not the reception."
+                }, 
+                "id": "2392", 
+                "media": [
+                    {
+                        "assets": {
+                            "thumbnail": {
+                                "_links": {
+                                    "_self": {
+                                        "href": "http://media.guggenheim.org/content/New_York/events/stock/ycc-only.png"
+                                    }
+                                }, 
+                                "height": 135, 
+                                "width": 205
+                            }
+                        }, 
+                        "format": "PNG", 
+                        "orientation": "landscape", 
+                        "type": "Image"
+                    }
+                ], 
+                "sold_out": false, 
+                "start_date": "2013-09-12", 
+                "start_time": "18:00:00", 
+                "titles": {
+                    "en": "Opening Reception: Super/Natural Contemporary Korean Art"
+                }
+            }
+        ], 
+        "range": {
+            "end_date": "2013-09-12", 
+            "start_date": "2013-09-12"
+        }
     }
 
 #### Response Fields
